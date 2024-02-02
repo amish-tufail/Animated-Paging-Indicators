@@ -14,20 +14,24 @@ struct PagingIndicator: View {
     var clipEdges: Bool = false
     var body: some View {
         GeometryReader {
-            let width = $0.size.width //$0 means proxy og geometryReader
             
+            let width = $0.size.width  // Container width
+            //$0 means proxy og geometryReader
+            
+            // Scrollable area width
             if let scrollViewWidth = $0.bounds(of: .scrollView(axis: .horizontal))?.width, scrollViewWidth > 0 {
-                let minX = $0.frame(in: .scrollView(axis: .horizontal)).minX
-                let totalPages = Int(width / scrollViewWidth)
+                let minX = $0.frame(in: .scrollView(axis: .horizontal)).minX // Tells how much scroll is swiped left (negative value)
+                let totalPages = Int(width / scrollViewWidth) // This gives total pages (whole width / single page width)
                 
-                let freeProgress = -minX / scrollViewWidth
-                let clippedProgress = min(max(freeProgress, 0.0), CGFloat(totalPages - 1))
-                let progress = clipEdges ? clippedProgress : freeProgress
+                let freeProgress = -minX / scrollViewWidth // can be 1.2, 1.3 like this, how much scroll we have done in terms of page no
+                let clippedProgress = min(max(freeProgress, 0.0), CGFloat(totalPages - 1)) // To keep that freeprogress in bound like the first and last can be still increase width so using this we keep value within bounds
+                let progress = clipEdges ? clippedProgress : freeProgress // use in Clip Edge Toggle to choose
                 
-                let activeIndex = Int(progress)
-                let nextIndex = Int(progress.rounded(.awayFromZero))
-                let indicatorProgress = progress - CGFloat(activeIndex)
+                let activeIndex = Int(progress) // Gives current page
+                let nextIndex = Int(progress.rounded(.awayFromZero)) // gives next index/page index
+                let indicatorProgress = progress - CGFloat(activeIndex) // Adjust width of current indicator using this
                 
+                // In Below two we set dynamic width of indicators
                 let currentPageWidth = 18 - (indicatorProgress * 18)
                 let nextPageWidth = indicatorProgress * 18
                 
@@ -47,8 +51,8 @@ struct PagingIndicator: View {
                             }
                     }
                 }
-                .frame(width: scrollViewWidth)
-                .offset(x: -minX)
+                .frame(width: scrollViewWidth) // This brings it in center
+                .offset(x: -minX) // This allows it remain fix in position and not move when scrolled, basically this reset offset for every page
             }
         }
         .frame(height: 30.0)
