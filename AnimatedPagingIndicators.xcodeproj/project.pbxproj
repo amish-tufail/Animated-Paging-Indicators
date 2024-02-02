@@ -12,6 +12,7 @@
 		EE0826862B6CC627001585D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE0826852B6CC627001585D4 /* Assets.xcassets */; };
 		EE0826892B6CC627001585D4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE0826882B6CC627001585D4 /* Preview Assets.xcassets */; };
 		EE0826902B6CC6ED001585D4 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE08268F2B6CC6ED001585D4 /* Home.swift */; };
+		EE0826922B6CCBF2001585D4 /* PagingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0826912B6CCBF2001585D4 /* PagingIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		EE0826852B6CC627001585D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE0826882B6CC627001585D4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EE08268F2B6CC6ED001585D4 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		EE0826912B6CCBF2001585D4 /* PagingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingIndicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 				EE0826812B6CC626001585D4 /* AnimatedPagingIndicatorsApp.swift */,
 				EE0826832B6CC626001585D4 /* ContentView.swift */,
 				EE08268F2B6CC6ED001585D4 /* Home.swift */,
+				EE0826912B6CCBF2001585D4 /* PagingIndicator.swift */,
 				EE0826852B6CC627001585D4 /* Assets.xcassets */,
 				EE0826872B6CC627001585D4 /* Preview Content */,
 			);
@@ -143,6 +146,7 @@
 				EE0826842B6CC626001585D4 /* ContentView.swift in Sources */,
 				EE0826902B6CC6ED001585D4 /* Home.swift in Sources */,
 				EE0826822B6CC626001585D4 /* AnimatedPagingIndicatorsApp.swift in Sources */,
+				EE0826922B6CCBF2001585D4 /* PagingIndicator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

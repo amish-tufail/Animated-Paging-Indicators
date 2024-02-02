@@ -24,6 +24,9 @@ struct Home: View {
                             .containerRelativeFrame(.horizontal) // This makes it expand to whole width
                     }
                 }
+                .overlay(alignment: .bottom) {
+                    PagingIndicator(activeTint: .white, inActiveTint: .black.opacity(0.25), opactityEffect: opacity, clipEdges: clip)
+                }
             }
             .scrollIndicators(.hidden)
             .scrollTargetBehavior(.paging) // This creates that paging effect on this, which we get with TabView
